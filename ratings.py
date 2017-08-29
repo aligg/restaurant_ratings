@@ -27,6 +27,20 @@ rests = restaurant_ratings.items()
 sorted_rests = sorted(rests)
 
 for i in range(len(sorted_rests)):
-    # print sorted_rests[i][0]
-    # print sorted_rests[i][1]
     print "%s is rated at %s." % (sorted_rests[i][0], sorted_rests[i][1])
+
+
+def add_rating():
+
+    while True:
+        restaurant_name = raw_input('What is the restaurant\'s name?')
+        restaurant_rating = int(raw_input('How do you rate this restaurant?'))
+
+        if (restaurant_rating >= 1 and restaurant_rating <= 5):
+            restaurant_ratings[restaurant_name] = restaurant_rating
+            return False
+        else:
+            print "Please enter a number between 1 and 5"
+
+
+add_rating()
